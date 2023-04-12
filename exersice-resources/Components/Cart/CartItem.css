@@ -1,0 +1,22 @@
+.cardItem {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* the 'Anmekrung hinzufügen' div */
+.annotation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* push the buttons to the right */
+.annotation a {
+    padding-right: 10px;
+}
+
+.cardItem h3 {
+    margin-bottom: 5px;
+}

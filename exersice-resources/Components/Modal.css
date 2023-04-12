@@ -1,0 +1,123 @@
+.overlay {
+    position: fixed;
+    width: 58%;
+    height: 40%;
+    top: 30%;
+    left: 15%;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: lightgray;
+
+}
+
+.flexed {
+    display: flex;
+}
+
+.modalContainer {
+    max-width: 600px;
+    width: 80%;
+    height: 80%;
+    display: flex;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.modal-item-title {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.modal-item-ing {
+    margin-top: 10px;
+}
+
+.modal-item-size {
+    color: grey;
+    margin-top: 10px;
+}
+
+.modal-item-price {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.modal-bottom {
+    display: flex;
+}
+
+.modal-item-add {
+    justify-content: center;
+    display: flex;
+}
+
+.modal-item-img {
+    flex: 10%;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+.modal-item-img img {
+    max-width: 120px;
+    height: 120px;
+}
+
+.modal-item-add-button {
+    width: 70%;
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 5px 5px 5px 5px;
+    background-color: rgb(243, 104, 5);
+    border-radius: 100px;
+    border-style: none;
+    color: white;
+    max-height: 45px;
+    padding: 8px 0px 8px 0px;
+}
+
+.modal-item-add-button:hover {
+    background-color: rgb(243, 121, 34);
+}
+
+.add-item-img {
+    max-width: 35px;
+    height: 35px;
+}
+
+.counter-div {
+    display: flex;
+    align-items: center;
+}
+
+.counter-div button {
+    border-style: none;
+    font-size: 18pt;
+    padding: 0px 10px 30px 10px;
+    background-color: rgb(210, 210, 210);
+    border-radius: 100px;
+    height: 35%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.counter-div p {
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.extras {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
