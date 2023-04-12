@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Hdm React Lecture
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains exercises for practicing the stuff you learned during our lecture. You will transform a static html website to a dynamic, component based website using react.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Welcome to our react lecture exercises. To follow along, please complete these steps:
 
-### `npm start`
+1. Install node.js: https://nodejs.org/en/download
+2. Open a terminal and cd into this directory
+3. Run `npm install` to get all the dependencies
+4. Run `npm start` to start the webserver
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Then your default browser should open this address: `localhost:3000` and display a website.
+If not, try to open this website manually.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Exercises
+## Exercise 1 / Components
 
-### `npm test`
+Your task is to replace the static food list with some react components. At the end you should have seperate FoodItem components for the dishes inside a category which are displayed inside a FoodList. Also every category from 'Beliebt, Pizza, Pasta, Salate' should be button component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![FoodList](exersice-resources/readme-images/exercise1.png)
 
-### `npm run build`
+You need to create:
+- FoodList (the whole area with all the food entries)
+- FoodItem (a single food entry)
+- FoodButton (the food category buttons)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use the data from [here](./exersice-resources/allFood.js) inside the foodList as data input.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Get some [hints](#exercise-1-hints)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Exercise 2 / States
 
-### `npm run eject`
+Now we want to bring some life to the food category section.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Food Category](exersice-resources/readme-images/food-category.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Your task is to implement buttons and states to switch to a different food category and have the foodList updated accordingly.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Get some [hints](#exercise-2-hints)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Hints
+## Exercise 1 Hints
+1. Create the 3 components in a 'Components' folder.
+2. Create a FoodButton component which returns a `<button>` and replace the static html with a JSX element to generate a button for every category. You can do that with a `.map()` function.
+3. Create a FoodItem which uses props to display the title, description, size, image and price of a dish.
+4. Create a FoodList component and add the food data object from [here](./exersice-resources/allFood.js) to it. Add another `.map()` function which returns a FoodItem.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Exercise 2 Hints
+1. Add a 'category' state to store the selected category.
+2. Add the function 'setCategory' to the FoodButton so that you can implement an event inside the FoodButton component and call this function.
