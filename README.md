@@ -4,10 +4,10 @@ This repository contains exercises for practicing the stuff you learned during o
 
 ## Installation
 
-Welcome to our react lecture exercises. To follow along, please complete these steps:
+To follow along, please complete these steps:
 
 1. Install node.js: https://nodejs.org/en/download
-2. Open a terminal and cd into this directory
+2. Open a terminal and cd into the directory of this repository
 3. Run `npm install` to get all the dependencies
 4. Run `npm start` to start the webserver
 
@@ -17,7 +17,7 @@ If not, try to open this website manually.
 # Exercises
 ## Exercise 1 / Components
 
-Your task is to replace the static food list with some react components. At the end you should have seperate FoodItem components for the dishes inside a category which are displayed inside a FoodList. Also every category from 'Beliebt, Pizza, Pasta, Salate' should be button component.
+Your task is to replace the static food list with some react components. At the end you should have seperate FoodItem components for the dishes inside a category which are displayed inside a FoodList. Also, every category from 'Beliebt, Pizza, Pasta, Salate' should be button component.
 
 ![FoodList](exersice-resources/readme-images/exercise1.png)
 
