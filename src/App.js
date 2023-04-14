@@ -1,4 +1,5 @@
 import './App.css';
+import FoodList from "./Components/Food/FoodList";
 
 function App(props) {
   return (
@@ -50,94 +51,7 @@ function App(props) {
               <h2>Beliebt</h2>
             </div>
             {/* Liste der angezeigten Elemente: Hier Pizza */}
-            <div className="food-list">
-              <ul>
-                {/* Erstes Element: Pizza Margherita */}
-                <li className="food-item">
-                  {/* Item Titel */}
-                  <div className="food-item-title">
-                    <h2>
-                      Pizza Margherita
-                    </h2>
-                    {/* Item Zutaten */}
-                    <p className="food-item-ing">
-                      mit milder Tomatensauce und leckerem Edamer Käse
-                    </p>
-                    {/* Item Größen */}
-                    <p className="food-item-size">
-                      Wahl aus: Medium, Ø 26cm, Large, Ø 32cm, X-Large, Ø 40cm oder XX-Large, Ø 50cm.
-                    </p>
-                    {/* Item Preis */}
-                    <p className="food-item-price">
-                      10,49€
-                    </p>
-                  </div>
-                  {/* Item Bild */}
-                  <div className="food-item-img">
-                    <img src="https://res.cloudinary.com/tkwy-prod-eu/image/upload/ar_1:1,c_thumb,h_120,w_120/f_auto/q_auto/dpr_2.0/v1680004728/static-takeaway-com/images/chains/de/pizza_pasta/products/2023_01_pizza_marghetira" alt="Pizza Margherita">
-                    </img>
-                  </div>
-                  {/* Plus-Icon zum Hinzufügen */}
-                  <div className="add-item">
-                    <button className="add-item-button">
-                      <img className="add-item-img" src="./images/add-icon.png" alt="Zum Warenkorb hinzufügen"></img>
-                    </button>
-                  </div>
-                </li>
-                {/* Nächstes Food Item analog zum ersten */}
-                <li className="food-item">
-                  <div className="food-item-title">
-                    <h2>
-                      Pizza Roma
-                    </h2>
-                    <p className="food-item-ing">
-                      mit saftiger Salami und frischen Champignons auf milder Tomatensauce und leckerem Edamer Käse
-                    </p>
-                    <p className="food-item-size">
-                      Wahl aus: Medium, Ø 26cm, Large, Ø 32cm, X-Large, Ø 40cm oder XX-Large, Ø 50cm.
-                    </p>
-                    <p className="food-item-price">
-                      11,99€
-                    </p>
-                  </div>
-                  <div className="food-item-img">
-                    <img src="https://res.cloudinary.com/tkwy-prod-eu/image/upload/ar_1:1,c_thumb,h_120,w_120/f_auto/q_auto/dpr_2.0/v1680004728/static-takeaway-com/images/chains/de/pizza_pasta/products/2023_01_pizza_roma" alt="Pizza Margherita">
-                    </img>
-                  </div>
-                  <div className="add-item">
-                    <button className="add-item-button">
-                      <img className="add-item-img" src="./images/add-icon.png" alt="Zum Warenkorb hinzufügen"></img>
-                    </button>
-                  </div>
-                </li>
-                {/* Nächstes Food Item analog zum ersten */}
-                <li className="food-item">
-                  <div className="food-item-title">
-                    <h2>
-                      Pizza Alaska
-                    </h2>
-                    <p className="food-item-ing">
-                      mit saftigem Thunfisch und roten Zwiebeln auf milder Tomatensauce und leckerem Edamer Käse
-                    </p>
-                    <p className="food-item-size">
-                      Wahl aus: Medium, Ø 26cm, Large, Ø 32cm, X-Large, Ø 40cm oder XX-Large, Ø 50cm.
-                    </p>
-                    <p className="food-item-price">
-                      11,99€
-                    </p>
-                  </div>
-                  <div className="food-item-img">
-                    <img src="https://res.cloudinary.com/tkwy-prod-eu/image/upload/ar_1:1,c_thumb,h_120,w_120/f_auto/q_auto/dpr_2.0/v1680004728/static-takeaway-com/images/chains/de/pizza_pasta/products/2023_01_pizza_alaska" alt="Pizza Margherita">
-                    </img>
-                  </div>
-                  <div className="add-item">
-                    <button className="add-item-button">
-                      <img className="add-item-img" src="./images/add-icon.png" alt="Zum Warenkorb hinzufügen"></img>
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <FoodList/>
           </div>
         </div>
 
