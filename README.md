@@ -17,7 +17,7 @@ If not, try to open this website manually.
 # Exercises
 ## Exercise 1 / Components
 
-Your task is to replace the static food list with some react components. At the end you should have seperate FoodItem components for the dishes inside a category which are displayed inside a FoodList. Also, every category from 'Beliebt, Pizza, Pasta, Salate' should be button component.
+Your task is to replace the static food list with some react components. At the end you should have separate FoodItem components for the dishes inside a category which are displayed inside a FoodList. Also, every category from 'Beliebt, Pizza, Pasta, Salate' should be button component.
 
 ![FoodList](exersice-resources/readme-images/exercise1.png)
 
@@ -58,7 +58,7 @@ The modal can be placed inside foodList, but you need to update the foodItem to 
 
 ![Cart](./exersice-resources/readme-images/cart.png)
 
-You need to propagete the modal data to the data to our cart component.
+You need to propagate the modal data to the data to our cart component.
 One approach could be to store the cart items inside a state in the app component, which then feeds the cart.
 You could store the user input data from the modal in an object like this `{"title": food.title, "price": total, "counter": counter}` and propagate it up.
 
@@ -99,7 +99,7 @@ Get some [hints](#exercise-4-hints).
 ### Modal
 1. Create the components and import them into the foodList.
 2. Create states inside foodList to store the open/close status and the clickedItem for the modal.
-3. Implement a function to set the allFoods object to the selectd category (slice the array)
+3. Implement a function to set the allFoods object to the selected category (slice the array)
 4. Add a function to set openModal to true/false
 5. Add the two functions you just created to the foodItem attributes so that you can call them inside foodItem
 6. Call the functions with `onClick` inside the foodItem
