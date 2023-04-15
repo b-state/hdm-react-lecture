@@ -20,7 +20,6 @@ const CartSummary = (props) => {
     // don't return the summary if no items were added
     if (subtotal === 0) {
 
-
     } else {
 
         return (<div className={'cart-summary'}>
@@ -36,7 +35,9 @@ const CartSummary = (props) => {
                 <p style={{fontWeight: 'bold'}}>Gesamt:</p>
                 <p style={{fontWeight: 'bold'}}>{total}€</p>
             </div>
-
+            {total >= 30 ? '' : <div className={'cart-summary-entry'}>
+                <p>Kostenfreie Lieferung ab 30,00€</p>
+            </div>}
             <button>Bezahlen ({total}€)</button>
         </div>)
     }
