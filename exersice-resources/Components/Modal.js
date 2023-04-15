@@ -95,12 +95,12 @@ const Modal = ({open, food, closeModal, onAddToCart}) => {
                 </div>
             </div>
             <form className="extras">
-                <input type="checkbox" id="extra1" name="extra1" value="extraCheese" onChange={checkBoxen}/>
-                <label for="extra1">Extra Käse (+1,20€)</label><br></br>
-                <input type="checkbox" id="extra2" name="extra2" value="extraHot" onChange={checkBoxen}/>
-                <label for="extra2">Extra scharf (+0,50€)</label><br></br>
-                <input type="checkbox" id="extra3" name="extra3" value="extraPineapple" onChange={checkBoxen}/>
-                <label for="extra3">Mit Ananas (+0,70€)</label><br></br>
+                <div><input type="checkbox" id="extra1" name="extra1" value="extraCheese" onChange={checkBoxen}/>
+                    <label for="extra1">Extra Käse (+1,20€)</label></div>
+                <div><input type="checkbox" id="extra2" name="extra2" value="extraHot" onChange={checkBoxen}/>
+                    <label for="extra2">Extra scharf (+0,50€)</label></div>
+                <div><input type="checkbox" id="extra3" name="extra3" value="extraPineapple" onChange={checkBoxen}/>
+                    <label for="extra3">Mit Ananas (+0,70€)</label></div>
             </form>
             {/* Unterer Bereich */}
             <div className="modal-item-add">
@@ -113,8 +113,7 @@ const Modal = ({open, food, closeModal, onAddToCart}) => {
                 <button className="modal-item-add-button" onClick={addCart}> {food.price}€</button>
             </div>
             <p className="closeBtn" onClick={closeModal}>X</p>
-        </div>
-    )
+        </div>)
 
     function countdown() {
         if (counter >= 2) {
