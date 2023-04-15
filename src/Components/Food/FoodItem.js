@@ -1,7 +1,7 @@
 import React from 'react'
 import './FoodItem.css'
 
-const FoodItem = ({title, ing, size, price, img}) => {
+const FoodItem = ({title, ing, size, price, img, index, showModal, showItem}) => {
 
     return (
         <li className="food-item">
@@ -21,7 +21,10 @@ const FoodItem = ({title, ing, size, price, img}) => {
             </div>
             {/* Plus-Icon zum Hinzufügen */}
             <div className="add-item">
-                <button className="add-item-button">
+                <button className="add-item-button" onClick={() => {
+                    showModal();
+                    showItem(index)
+                }}>
                     <img className="add-item-img" src="./images/add-icon.png" alt="Zum Warenkorb hinzufügen"></img>
                 </button>
             </div>

@@ -3,6 +3,7 @@ import FoodList from "./Components/Food/FoodList";
 import {v4 as uuidv4} from 'uuid';
 import {useState} from "react";
 import FoodButton from "./Components/Food/FoodButton";
+import Cart from "./Components/Cart/Cart";
 
 function App(props) {
 
@@ -17,6 +18,14 @@ function App(props) {
 
     const onCategoryChange = (event) => {
         setCategory(event.target.value);
+    }
+
+    const allCartItems = []
+
+    const [cartItems, setCartItems] = useState(allCartItems);
+    const onAddToCart = (item) => {
+
+        setCartItems([...cartItems, item])
     }
 
     return (
@@ -70,24 +79,12 @@ function App(props) {
                         <h2>Beliebt</h2>
                     </div>
                     {/* Liste der angezeigten Elemente: Hier Pizza */}
-                    <FoodList category={category}/>
+                    <FoodList category={category} onAddToCart={onAddToCart}/>
                 </div>
             </div>
 
             {/* Rechte Seite für Warenkorb */}
-            <div className="cart-side">
-                {/* Titel */}
-                <div className="cart-header">
-                    <h1>Warenkorb</h1>
-                </div>
-                {/* Inhalt, aktuell Bild und Text, keine Food-Elemente */}
-                <div className="cart-content">
-                    <img className="shopping-img" src="./images/shop-icon.png" alt="Shopping-Cart"></img>
-                    <p>
-                        Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.
-                    </p>
-                </div>
-            </div>
+            <Cart cartItems={cartItems}/>
         </div>
     );
 }
