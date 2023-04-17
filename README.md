@@ -103,7 +103,7 @@ Get some [hints](#exercise-4-hints).
 4. Add a function to set openModal to true/false
 5. Add the two functions you just created to the foodItem attributes so that you can call them inside foodItem
 6. Call the functions with `onClick` inside the foodItem
-7. You can use the `clicedItem` state to insert the modal in FoodList with a conditional. Maybe don't render it, if nothing was clicked.
+7. You can use the `clickedItem` state to insert the modal in FoodList with a conditional. Maybe don't render it, if nothing was clicked.
 
 ### Cart
 1. Add a cartItems state inside the app component with a empty list as an initial state.
