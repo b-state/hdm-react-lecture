@@ -40,6 +40,7 @@ Now we want to bring some life to the food category section.
 ![Food Category](exersice-resources/readme-images/food-category.png)
 
 Your task is to make the FoodButtons work. Add them to app.js, use states to store the selected category and have the foodList updated accordingly.
+Make sure to match the category names of the buttons with the names from the allFood array. You can use [this](./exersice-resources/allButtons.js) to create the buttons.
 
 Get some [hints](#exercise-2-hints).
 
@@ -94,6 +95,7 @@ Get some [hints](#exercise-4-hints).
 ## Exercise 2 Hints
 1. Add a 'category' state to store the selected category.
 2. Add the function 'setCategory' to the FoodButton so that you can implement an event inside the FoodButton component and call this function.
+3. Use the array with the category names from [here](./exersice-resources/allButtons.js).
 
 ## Exercise 3 Hints
 ### Modal
