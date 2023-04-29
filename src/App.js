@@ -4,10 +4,14 @@ import {v4 as uuidv4} from 'uuid';
 import {useState} from "react";
 import FoodButton from "./Components/Food/FoodButton";
 import Cart from "./Components/Cart/Cart";
+import { useSelector, useDispatch } from 'react-redux';
+import { setPizzaCategory, setBeliebtCategory } from './Actions';
 
 function App(props) {
 
-    const [category, setCategory] = useState("beliebt");
+    const category = useSelector(state => state.category);
+    //const [category, setCategory] = useState("beliebt");
+    const dispatch = useDispatch();
 
     //Datensatz mit Buttons
     const allbuttons = [// Für alle Parameter: "key": value, ...
@@ -16,9 +20,11 @@ function App(props) {
             "categorie": "pizza"
         }, {"buttonName": "Pasta", "categorie": "pasta"}, {"buttonName": "Salate", "categorie": "salate"}]
 
+    /*
     const onCategoryChange = (event) => {
         setCategory(event.target.value);
     }
+    */
 
     const allCartItems = []
 
@@ -62,9 +68,11 @@ function App(props) {
                             {allbuttons.map((item, index) => {
                                 // Übergibt Props an ToDos
                                 return (<FoodButton
+                                    
+                                    // Funktionsaufruf je nach Kategorie
+                                    onclick={() => dispatch(setPizzaCategory)}
                                     buttonName={item.buttonName}
                                     foodCategorie={item.categorie}
-                                    onCategoryChange={onCategoryChange}
                                     key={uuidv4()}
                                 ></FoodButton>);
                             })}
