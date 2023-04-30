@@ -4,12 +4,14 @@ import {v4 as uuidv4} from 'uuid';
 import {useState} from "react";
 import FoodButton from "./Components/Food/FoodButton";
 import Cart from "./Components/Cart/Cart";
-import { useSelector, useDispatch } from 'react-redux';
-import { setPizzaCategory, setBeliebtCategory } from './Actions';
+import {useDispatch, useSelector} from 'react-redux';
+import {setPizzaCategory} from './Actions';
 
 function App(props) {
 
-    const category = useSelector(state => state.category);
+    const category = useSelector(state => {
+        return state.categoryReducer.type
+    });
     //const [category, setCategory] = useState("beliebt");
     const dispatch = useDispatch();
 
@@ -68,7 +70,7 @@ function App(props) {
                             {allbuttons.map((item, index) => {
                                 // Übergibt Props an ToDos
                                 return (<FoodButton
-                                    
+
                                     // Funktionsaufruf je nach Kategorie
                                     onclick={() => dispatch(setPizzaCategory)}
                                     buttonName={item.buttonName}

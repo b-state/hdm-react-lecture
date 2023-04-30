@@ -1,12 +1,12 @@
-const initialState = { type: 'BELIEBT' };
+const initialState = { type: 'beliebt' };
 
 const categoryReducer = (state = initialState, action = { type: 'DEFAULT' }) => {
     switch(action.type) {
         case 'PIZZA': 
             state = 'PIZZA'
             return state;
-        case 'BELIEBT': 
-            state = 'BELIEBT'
+        case 'beliebt':
+            state = 'beliebt'
             return state;
         case 'PASTA': 
             state = 'PASTA'

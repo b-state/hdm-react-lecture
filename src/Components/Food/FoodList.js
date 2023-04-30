@@ -83,7 +83,6 @@ const FoodList = (props) => {
             "img": "https://previews.123rf.com/images/baibaz/baibaz2001/baibaz200100016/138828046-bowl-of-healthy-vegetable-salad-isolated-on-white-background-top-view.jpg"
         }]
     };
-
     const selectedFood = props.category
     // UseState Hook zum Öffnen und schließen des Modals
     const [openModal, setOpenModal] = useState(false);

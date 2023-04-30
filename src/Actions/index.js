@@ -4,19 +4,19 @@ export const setPizzaCategory = (category = 'PIZZA') => {
     }
 };
 
-export const setBeliebtCategory = (category = 'BELIEBT') => {
+export const setBeliebtCategory = (category = 'beliebt') => {
     return {
         type: category
     }
 };
 
-export const setPastaCategory = (category = 'BELIEBT') => {
+export const setPastaCategory = (category = 'beliebt') => {
     return {
         type: category
     }
 };
 
-export const setSalateCategory = (category = 'BELIEBT') => {
+export const setSalateCategory = (category = 'beliebt') => {
     return {
         type: category
     }
