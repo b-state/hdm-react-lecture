@@ -9,6 +9,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import categoryReducer from './Reducers/category';
 
+// Create global Redux Store 
 const myStore = createStore(categoryReducer, 'BELIEBT');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
