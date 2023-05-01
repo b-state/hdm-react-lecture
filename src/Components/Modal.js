@@ -53,10 +53,6 @@ const Modal = ({open, food, closeModal, onAddToCart}) => {
         document.getElementsByClassName("modal-item-add-button")[0].innerHTML = foodprice + "€";
     };
 
-    useEffect(() => {
-        calculatePrice();
-    }, [counter])
-
     const addCart = () => {
         onAddToCart({"title": food.title, "price": total, "counter": counter})
         closeModal();
