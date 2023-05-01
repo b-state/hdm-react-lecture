@@ -84,6 +84,17 @@ Import the cart icon like this `import {HiOutlineShoppingBag} from "react-icons/
 
 Get some [hints](#exercise-4-hints).
 
+## Exercise 6 / Redux
+
+Outsource the storage of the category to be displayed (Popular, Pizza, Pasta, Salads) to a global store using Redux. 
+
+![Food Category](exersice-resources/readme-images/food-category.png)
+
+The global store is already initialized in index.js. In the Action component (Actions/index.js) you still have to add the cases for Pasta and Salads.
+In App.js you should now access the state. In FoodButton.js you should use Dispatch to write the new state to the store.
+
+Get some [hints](#exercise-6-hints).
+
 # Hints
 ## Exercise 1 Hints
 1. Create the 3 components in a 'Components' folder.
@@ -115,3 +126,10 @@ Get some [hints](#exercise-4-hints).
 ## Exercise 4 Hints
 1. For the full/empty cart make an if/else statement and return either the CartItem component if the cart as some items or return the empty-cart-message from [here](./exersice-resources/cart-conditional-if-else.js).
 2. The solution for the ternary expression can be found [here](./exersice-resources/cart-conditional-ternary.js)
+
+## Exercise 6 Hints
+1. For the syntax of the salad and pasta cases you can use the syntax of the cases for pizza and popular. 
+2. The new state can be accessed with `useSelector()`.
+3. So that the new state is accessed on every update, useEffect() can be useful.
+4. `Dispatch(action)` passes action function to store. 
+5. A category can be given to the action..
