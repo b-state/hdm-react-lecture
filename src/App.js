@@ -76,7 +76,7 @@ function App(props) {
                 <div className="bottomhalf">
                     {/* Section Header */}
                     <div className="foodsection-header">
-                        <h2>Beliebt</h2>
+                        <h2>{category}</h2>
                     </div>
                     {/* Liste der angezeigten Elemente: Hier Pizza */}
                     <FoodList category={category} onAddToCart={onAddToCart}/>

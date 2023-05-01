@@ -52,7 +52,7 @@ const Modal = ({open, food, closeModal, onAddToCart}) => {
         setTotal(foodprice);
         document.getElementsByClassName("modal-item-add-button")[0].innerHTML = foodprice + "€";
     };
-
+    //Ausführen von calculatePrice(), sobald sich der counter (Anzahl der Food-Items) ändert
     useEffect(() => {
         calculatePrice();
     }, [counter])
