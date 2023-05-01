@@ -1,19 +1,30 @@
 import './App.css';
 import FoodList from "./Components/Food/FoodList";
 import {v4 as uuidv4} from 'uuid';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import FoodButton from "./Components/Food/FoodButton";
 import Cart from "./Components/Cart/Cart";
 import {useDispatch, useSelector} from 'react-redux';
-import {setPizzaCategory} from './Actions';
+import React, { useSubscribtion } from 'react'
 
 function App(props) {
 
+    /*
     const category = useSelector(state => {
+        console.log(state.categoryReducer.type);
         return state.categoryReducer.type
     });
+
+    */ 
+    const [category, setCategory] = useState('beliebt');
+    const categoryType = useSelector(state => state.categoryReducer.type);
+    
+    useEffect(() => {
+    setCategory(categoryType);
+    console.log(categoryType); //-> undefined
+    }, [categoryType]);
+
     //const [category, setCategory] = useState("beliebt");
-    const dispatch = useDispatch();
 
     //Datensatz mit Buttons
     const allbuttons = [// Für alle Parameter: "key": value, ...
@@ -23,9 +34,7 @@ function App(props) {
         }, {"buttonName": "Pasta", "categorie": "pasta"}, {"buttonName": "Salate", "categorie": "salate"}]
 
     /*
-    const onCategoryChange = (event) => {
-        setCategory(event.target.value);
-    }
+   
     */
 
     const allCartItems = []
@@ -70,9 +79,6 @@ function App(props) {
                             {allbuttons.map((item, index) => {
                                 // Übergibt Props an ToDos
                                 return (<FoodButton
-
-                                    // Funktionsaufruf je nach Kategorie
-                                    onclick={() => dispatch(setPizzaCategory)}
                                     buttonName={item.buttonName}
                                     foodCategorie={item.categorie}
                                     key={uuidv4()}
