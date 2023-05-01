@@ -9,13 +9,8 @@ import {useSelector} from 'react-redux';
 function App(props) {
 
     const [category, setCategory] = useState('beliebt');
-    // Access to the global state
-    const categoryType = useSelector(state => state.categoryReducer.category);
 
-    // Update at each render
-    useEffect(() => {
-    setCategory(categoryType);
-    });
+    // ToDo: Access to the global State
 
     //Datensatz mit Buttons
     const allbuttons = [// Für alle Parameter: "key": value, ...
@@ -23,10 +18,6 @@ function App(props) {
             "buttonName": "Pizza",
             "categorie": "pizza"
         }, {"buttonName": "Pasta", "categorie": "pasta"}, {"buttonName": "Salate", "categorie": "salate"}]
-
-    /*
-   
-    */
 
     const allCartItems = []
 

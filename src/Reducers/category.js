@@ -11,14 +11,6 @@ const categoryReducer = (state = initialState, action) => {
             return {
                 category: 'beliebt'
             }
-        case 'pasta': 
-        return {
-            category: 'pasta'
-        }
-        case 'salate': 
-            return {
-                category: 'salate'
-            }
         default: 
         return {
             category: 'beliebt'

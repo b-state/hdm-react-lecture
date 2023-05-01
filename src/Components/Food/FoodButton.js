@@ -5,11 +5,8 @@ import { updateCategory } from '../../Actions'
 
 const FoodButton = ({buttonName, foodCategorie}) => {
 
-    const dispatch = useDispatch();
-    // Passes action function to store
     const changeCategory = () => {
-        const newCategory = foodCategorie;
-        return dispatch(updateCategory(newCategory));
+        // ToDo: Passes action function to store
     }
 
     return (
