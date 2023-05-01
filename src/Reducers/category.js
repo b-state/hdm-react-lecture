@@ -1,10 +1,9 @@
 const initialState = { category: 'beliebt' };
 
+// Reducer aktualisiert State je nach type der Action
 const categoryReducer = (state = initialState, action) => {
-    console.log("in Reducer"); //-> wird ausgeführt
     switch(action.type) {
         case 'pizza': 
-            console.log("in pizza"); //-> wird ausgeführt 
             return {
                 category: 'pizza'
             }
@@ -26,5 +25,4 @@ const categoryReducer = (state = initialState, action) => {
         }
     }
 }
-// console.log("in Reducer"); //-> 
 export default categoryReducer;

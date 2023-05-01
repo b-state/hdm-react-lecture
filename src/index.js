@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStoreHook } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit'
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import categoryReducer from './Reducers/category';
 
@@ -15,6 +13,7 @@ const myStore = configureStore({reducer: {categoryReducer}});
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/*Links store with entire app, enables access from everywhere*/}
     <Provider store={myStore}>
     <App />
     </Provider>
