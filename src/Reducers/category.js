@@ -1,21 +1,30 @@
-const initialState = { type: 'beliebt' };
+const initialState = { category: 'beliebt' };
 
 const categoryReducer = (state = initialState, action) => {
+    console.log("in Reducer"); //-> wird ausgeführt
     switch(action.type) {
         case 'pizza': 
-            state = 'pizza'
-            return state;
+            console.log("in pizza"); //-> wird ausgeführt 
+            return {
+                category: 'pizza'
+            }
         case 'beliebt':
-            state = 'beliebt'
-            return state;
+            return {
+                category: 'beliebt'
+            }
         case 'pasta': 
-            state = 'pasta'
-            return state;
+        return {
+            category: 'pasta'
+        }
         case 'salate': 
-            state = 'salate'
-            return state;
+            return {
+                category: 'salate'
+            }
         default: 
-            return state;
+        return {
+            category: 'beliebt'
+        }
     }
 }
+// console.log("in Reducer"); //-> 
 export default categoryReducer;

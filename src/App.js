@@ -17,12 +17,12 @@ function App(props) {
 
     */ 
     const [category, setCategory] = useState('beliebt');
-    const categoryType = useSelector(state => state.categoryReducer.type);
+    const categoryType = useSelector(state => state.categoryReducer.category);
     
     useEffect(() => {
     setCategory(categoryType);
     console.log(categoryType); //-> undefined
-    }, [categoryType]);
+    });
 
     //const [category, setCategory] = useState("beliebt");
 
@@ -43,6 +43,17 @@ function App(props) {
     const onAddToCart = (item) => {
 
         setCartItems([...cartItems, item])
+    }
+
+    const titleCategory = () => {
+        if (category == 'pizza') {
+            return 'Pizza'
+        } else if (category == 'pasta') {
+            return 'Pasta'
+        } else if (category == 'salate') {
+            return 'Salate'
+        }
+        return 'Beliebt';
     }
 
     return (
@@ -92,7 +103,7 @@ function App(props) {
                 <div className="bottomhalf">
                     {/* Section Header */}
                     <div className="foodsection-header">
-                        <h2>Beliebt</h2>
+                        <h2>{titleCategory()}</h2>
                     </div>
                     {/* Liste der angezeigten Elemente: Hier Pizza */}
                     <FoodList category={category} onAddToCart={onAddToCart}/>

@@ -6,19 +6,14 @@ import { updateCategory } from '../../Actions'
 const FoodButton = ({buttonName, foodCategorie}) => {
 
     const dispatch = useDispatch();
-    /*
-    const onButtonChange= (category) => {
-        onCategoryChange(category)
-    } 
-    */
-
-   const category = useSelector(state => state.categoryReducer.type);
+    const category = useSelector(state => state.categoryReducer.type);
 
 
     const changeCategory = () => {
         // hier fehlt noch change der category je nach button
-        const newCategory = 'pizza';
-        dispatch(updateCategory(newCategory));
+        const newCategory = foodCategorie;
+        console.log(dispatch(updateCategory(newCategory))); //-> {type: "pizza"}
+        return dispatch(updateCategory(newCategory));
     }
 
     // Hier onclick rausnehmen
