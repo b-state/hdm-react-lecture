@@ -4,27 +4,18 @@ import {v4 as uuidv4} from 'uuid';
 import {useEffect, useState} from "react";
 import FoodButton from "./Components/Food/FoodButton";
 import Cart from "./Components/Cart/Cart";
-import {useDispatch, useSelector} from 'react-redux';
-import React, { useSubscribtion } from 'react'
+import {useSelector} from 'react-redux';
 
 function App(props) {
 
-    /*
-    const category = useSelector(state => {
-        console.log(state.categoryReducer.type);
-        return state.categoryReducer.type
-    });
-
-    */ 
     const [category, setCategory] = useState('beliebt');
+    // Access to the global state
     const categoryType = useSelector(state => state.categoryReducer.category);
-    
+
+    // Update at each render
     useEffect(() => {
     setCategory(categoryType);
-    console.log(categoryType); //-> undefined
     });
-
-    //const [category, setCategory] = useState("beliebt");
 
     //Datensatz mit Buttons
     const allbuttons = [// Für alle Parameter: "key": value, ...

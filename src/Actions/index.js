@@ -1,5 +1,5 @@
+// Action describes change of the state
 export const updateCategory = (category) => {
-    console.log("in action");
     return {
         type: category
     }
