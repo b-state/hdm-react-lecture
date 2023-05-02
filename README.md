@@ -116,7 +116,15 @@ Please create a FoodList.test.js file and write 3 tests in 2 test suites:
 
 ### Suite 1
 1. Check if 'Pizza Margretha' gets rendered, if the FoodList is set to the 'beliebt' category.
-2. Write a parameterized test for the following input and output:
+2. Write a parameterized test for the following input and output (read the [docs](https://jestjs.io/docs/api#testeachtablename-fn-timeout)):
+
+`[
+['beliebt', 'Pizza Margherita'],
+['beliebt', 'Pasta alla Panna'],
+['pizza', 'Pizza Roma'],
+['salate', 'Gemischter Salat'],
+]`
+
 ### Suite 2
 1. Mock the fetchFood call and set this return value for it. Also in the same test use a click event to open the modal and check if it has opened.
 
