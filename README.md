@@ -108,26 +108,39 @@ Get some [hints](#exercise-6-hints).
 
 ## Exercise 7 / Tests
 
-Now we want to implement some tests for our component. For that, please replace the variable assignment of `allFood` (found [here](./src/Components/Food/FoodList.js), Line 8) with the fake API call function `fetchFood()`:
+Now we want to implement some tests for our component. For that, please replace the variable assignment of `allFood` (found [here](./src/Components/Food/FoodList.js), Line 8) with the fake API call function:
+```
+import {fetchFood} from "../../utils/foodAPI";
+allFood = fetchFood()
+```
 
-`import {fetchFood} from "../../utils/foodAPI";`
 
+Have a look at the syntax for the test. You can find more information [here](https://jestjs.io/docs/tutorial-react#dom-testing). 
+```
+describe('Suit name', () => {
+    test("Test name", () => {
+        render(<mycomponent/>);
+        const someElement = screen.getByText(/someText/i);
+        expect(someElement).toBeInTheDocument();
+    });
+```
 Please create a FoodList.test.js file and write 3 tests in 2 test suites:
 
 ### Suite 1 ("Correct items in foodList")
 1. Check if 'Pizza Margretha' gets rendered, if the FoodList is set to the 'beliebt' category.
 2. Write a parameterized test for the following input and output (read the [docs](https://jestjs.io/docs/api#testeachtablename-fn-timeout)):
 
-`[
-['beliebt', 'Pizza Margherita'],
+```
+[['beliebt', 'Pizza Margherita'],
 ['beliebt', 'Pasta alla Panna'],
 ['pizza', 'Pizza Roma'],
-['salate', 'Gemischter Salat'],
-]`
+['salate', 'Gemischter Salat']]
+```
 
 ### Suite 2 ("API call test")
 1. Mock the fetchFood call and set this return value for it. Also in the same test use a click event to open the modal and check if it has opened. You can find the mock function, and it's import [here](./exersice-resources/mock-function.js).
 
+Run the test with `npm test`
 Get some [hints](#exercise-7-hints).
 
 # Hints
