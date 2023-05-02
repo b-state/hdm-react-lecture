@@ -186,3 +186,4 @@ Get some [hints](#exercise-7-hints).
 5. A category can be given to the action..
 
 ## Exercise 7 Hints
+1. Read the documentation pages, there you should find everything.
