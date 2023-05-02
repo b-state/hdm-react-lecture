@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider } from 'react-redux';
+import categoryReducer from './Reducers/category';
+
+// Create global Redux Store 
+const myStore = configureStore({reducer: {categoryReducer}});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/*Links store with entire app, enables access from everywhere*/}
+    <Provider store={myStore}>
     <App />
+    </Provider>
   </React.StrictMode>
 );
 

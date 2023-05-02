@@ -1,13 +1,21 @@
 import './App.css';
 import FoodList from "./Components/Food/FoodList";
 import {v4 as uuidv4} from 'uuid';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import FoodButton from "./Components/Food/FoodButton";
 import Cart from "./Components/Cart/Cart";
+import {useSelector} from 'react-redux';
 
 function App(props) {
 
-    const [category, setCategory] = useState("beliebt");
+    const [category, setCategory] = useState('beliebt');
+    // Access to the global state
+    const categoryType = useSelector(state => state.categoryReducer.category);
+
+    // Update at each render
+    useEffect(() => {
+    setCategory(categoryType);
+    });
 
     //Datensatz mit Buttons
     const allbuttons = [// Für alle Parameter: "key": value, ...
@@ -16,9 +24,9 @@ function App(props) {
             "categorie": "pizza"
         }, {"buttonName": "Pasta", "categorie": "pasta"}, {"buttonName": "Salate", "categorie": "salate"}]
 
-    const onCategoryChange = (event) => {
-        setCategory(event.target.value);
-    }
+    /*
+   
+    */
 
     const allCartItems = []
 
@@ -26,6 +34,17 @@ function App(props) {
     const onAddToCart = (item) => {
 
         setCartItems([...cartItems, item])
+    }
+
+    const titleCategory = () => {
+        if (category == 'pizza') {
+            return 'Pizza'
+        } else if (category == 'pasta') {
+            return 'Pasta'
+        } else if (category == 'salate') {
+            return 'Salate'
+        }
+        return 'Beliebt';
     }
 
     return (
@@ -64,7 +83,6 @@ function App(props) {
                                 return (<FoodButton
                                     buttonName={item.buttonName}
                                     foodCategorie={item.categorie}
-                                    onCategoryChange={onCategoryChange}
                                     key={uuidv4()}
                                 ></FoodButton>);
                             })}
@@ -76,7 +94,7 @@ function App(props) {
                 <div className="bottomhalf">
                     {/* Section Header */}
                     <div className="foodsection-header">
-                        <h2>Beliebt</h2>
+                        <h2>{titleCategory()}</h2>
                     </div>
                     {/* Liste der angezeigten Elemente: Hier Pizza */}
                     <FoodList category={category} onAddToCart={onAddToCart}/>
