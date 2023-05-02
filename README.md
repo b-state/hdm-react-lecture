@@ -84,6 +84,65 @@ Import the cart icon like this `import {HiOutlineShoppingBag} from "react-icons/
 
 Get some [hints](#exercise-4-hints).
 
+## Exercise 5 / useEffect-Hook
+
+![Modal](./exersice-resources/readme-images/modal.png)
+
+As you remember from last time, we created an application for placing food orders. Our application now has a modal as well as a cart for your orders.
+When looking at our modal by clicking on a 'plus' icon of a food item, you can see that selecting the size and adding some more ingredients to the dish is changing the price shown on the bottom. If you try to increase the quantity, the price won’t change.
+
+Take a closer look at the functions connected to the buttons for changing the quantity [here](./src/Components/Modal.js) and think of a way to solve the problem by using the useEffect-Hook!
+
+Get some [hints](#exercise-5-hints)
+
+## Exercise 6 / Redux
+
+Outsource the storage of the category to be displayed (Popular, Pizza, Pasta, Salads) to a global store using Redux. 
+
+![Food Category](exersice-resources/readme-images/food-category.png)
+
+The global store is already initialized in index.js. In the Action component (Actions/index.js) you still have to add the cases for Pasta and Salads.
+In App.js you should now access the state. In FoodButton.js you should use Dispatch to write the new state to the store.
+
+Get some [hints](#exercise-6-hints).
+
+## Exercise 7 / Tests
+
+Now we want to implement some tests for our component. For that, please replace the variable assignment of `allFood` (found [here](./src/Components/Food/FoodList.js), Line 8) with the fake API call function:
+```
+import {fetchFood} from "../../utils/foodAPI";
+allFood = fetchFood()
+```
+
+
+Have a look at the syntax for the test. You can find more information [here](https://jestjs.io/docs/tutorial-react#dom-testing). 
+```
+describe('Suit name', () => {
+    test("Test name", () => {
+        render(<mycomponent/>);
+        const someElement = screen.getByText(/someText/i);
+        expect(someElement).toBeInTheDocument();
+    });
+```
+Please create a FoodList.test.js file and write 3 tests in 2 test suites:
+
+### Suite 1 ("Correct items in foodList")
+1. Check if 'Pizza Margretha' gets rendered, if the FoodList is set to the 'beliebt' category.
+2. Write a parameterized test for the following input and output (read the [docs](https://jestjs.io/docs/api#testeachtablename-fn-timeout)):
+
+```
+[['beliebt', 'Pizza Margherita'],
+['beliebt', 'Pasta alla Panna'],
+['pizza', 'Pizza Roma'],
+['salate', 'Gemischter Salat']]
+```
+
+### Suite 2 ("API call test")
+1. Mock the fetchFood call and set this return value for it. Also in the same test use a click event to open the modal and check if it has opened. You can find the mock function, and it's import [here](./exersice-resources/mock-function.js).
+
+Run the test with `npm test`
+Get some [hints](#exercise-7-hints).
+
 # Hints
 ## Exercise 1 Hints
 1. Create the 3 components in a 'Components' folder.
@@ -115,3 +174,16 @@ Get some [hints](#exercise-4-hints).
 ## Exercise 4 Hints
 1. For the full/empty cart make an if/else statement and return either the CartItem component if the cart as some items or return the empty-cart-message from [here](./exersice-resources/cart-conditional-if-else.js).
 2. The solution for the ternary expression can be found [here](./exersice-resources/cart-conditional-ternary.js)
+
+## Exercise 5 Hints
+1. To use the useEffect-Hook, we need to take a look at which function we want to execute in order to calculate the new price as well as the prop/state that it should depend on. For that, look at the state that changes when using the functions `countdown()` and `countup()`
+
+## Exercise 6 Hints
+1. For the syntax of the salad and pasta cases you can use the syntax of the cases for pizza and popular. 
+2. The new state can be accessed with `useSelector()`.
+3. So that the new state is accessed on every update, useEffect() can be useful.
+4. `Dispatch(action)` passes action function to store. 
+5. A category can be given to the action..
+
+## Exercise 7 Hints
+1. Read the documentation pages, there you should find everything.
