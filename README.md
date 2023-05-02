@@ -114,7 +114,7 @@ Now we want to implement some tests for our component. For that, please replace 
 
 Please create a FoodList.test.js file and write 3 tests in 2 test suites:
 
-### Suite 1 ("Test FoodList")
+### Suite 1 ("Correct items in foodList")
 1. Check if 'Pizza Margretha' gets rendered, if the FoodList is set to the 'beliebt' category.
 2. Write a parameterized test for the following input and output (read the [docs](https://jestjs.io/docs/api#testeachtablename-fn-timeout)):
 
@@ -125,8 +125,10 @@ Please create a FoodList.test.js file and write 3 tests in 2 test suites:
 ['salate', 'Gemischter Salat'],
 ]`
 
-### Suite 2 ("Mock API Call")
-1. Mock the fetchFood call and set this return value for it. Also in the same test use a click event to open the modal and check if it has opened. You can find the mock function and it's import [here](./exersice-resources/mock-function.js).
+### Suite 2 ("API call test")
+1. Mock the fetchFood call and set this return value for it. Also in the same test use a click event to open the modal and check if it has opened. You can find the mock function, and it's import [here](./exersice-resources/mock-function.js).
+
+Get some [hints](#exercise-7-hints).
 
 # Hints
 ## Exercise 1 Hints
@@ -169,3 +171,5 @@ Please create a FoodList.test.js file and write 3 tests in 2 test suites:
 3. So that the new state is accessed on every update, useEffect() can be useful.
 4. `Dispatch(action)` passes action function to store. 
 5. A category can be given to the action..
+
+## Exercise 7 Hints
