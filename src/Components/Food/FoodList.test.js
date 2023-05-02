@@ -2,10 +2,6 @@ import {fireEvent, render, screen} from '@testing-library/react';
 import FoodList from "./FoodList";
 import * as foodAPI from '../../utils/foodAPI';
 
-
-
-
-
 describe('Correct items in FoodList', () => {
 
     test("Renders category 'beliebt' and food 'Pizza Margaretha'", () => {
@@ -27,6 +23,7 @@ describe('Correct items in FoodList', () => {
 })
 
 describe('Modal test', () => {
+
     test('Renders modal after click on plus button', () => {
         render(<FoodList category={'beliebt'}/>);
         const firstButton = screen.getAllByAltText(/Zum Warenkorb hinzufügen/i)[0]
@@ -39,7 +36,6 @@ describe('Modal test', () => {
 describe('API calls test', () => {
 
     test('should render with an empty food list', () => {
-
         foodAPI.fetchFood = jest.fn().mockReturnValue({
             "beliebt": [
                 {
@@ -134,9 +130,7 @@ describe('API calls test', () => {
                 }
             ]
         })
-
         render(<FoodList category={'beliebt'}/>);
-
         const textElement = screen.getByText(/Pizza Margherita/i);
         expect(textElement).toBeInTheDocument();
     });
