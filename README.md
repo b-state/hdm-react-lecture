@@ -106,6 +106,19 @@ In App.js you should now access the state. In FoodButton.js you should use Dispa
 
 Get some [hints](#exercise-6-hints).
 
+## Exercise 7 / Tests
+
+Now we want to implement some tests for our component. For that, please replace the object of `allFood` (found [here](./src/Components/Food/FoodList.js), Line 8) with this fake API call function:
+
+
+Please create a FoodList.test.js file and write 3 tests in 2 test suites:
+
+### Suite 1
+1. Check if 'Pizza Margretha' gets rendered, if the FoodList is set to the 'beliebt' category.
+2. Write a parameterized test for the following input and output:
+### Suite 2
+1. Mock the fetchFood call and set this return value for it. Also in the same test use a click event to open the modal and check if it has opened.
+
 # Hints
 ## Exercise 1 Hints
 1. Create the 3 components in a 'Components' folder.
