@@ -108,8 +108,9 @@ Get some [hints](#exercise-6-hints).
 
 ## Exercise 7 / Tests
 
-Now we want to implement some tests for our component. For that, please replace the object of `allFood` (found [here](./src/Components/Food/FoodList.js), Line 8) with this fake API call function:
+Now we want to implement some tests for our component. For that, please replace the variable assignment of `allFood` (found [here](./src/Components/Food/FoodList.js), Line 8) with the fake API call function `fetchFood()`:
 
+`import {fetchFood} from "../../utils/foodAPI";`
 
 Please create a FoodList.test.js file and write 3 tests in 2 test suites:
 
