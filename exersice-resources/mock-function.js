@@ -1,3 +1,5 @@
+import * as foodAPI from '../../utils/foodAPI';
+
 foodAPI.fetchFood = jest.fn().mockReturnValue({
     "beliebt": [
         {
