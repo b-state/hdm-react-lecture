@@ -141,6 +141,7 @@ Please create a FoodList.test.js file and write 3 tests in 2 test suites:
 1. Mock the fetchFood call and set this return value for it. Also in the same test use a click event to open the modal and check if it has opened. You can find the mock function, and it's import [here](./exersice-resources/mock-function.js).
 
 Run the test with `npm test`
+
 Get some [hints](#exercise-7-hints).
 
 # Hints
